@@ -3,39 +3,7 @@ A timeseries of account balances for each client binned every 4hrs.
 Can definitely be tidied up - e.g. not use inline functions but need to figure out how to do this in dbt
 */
 
-
 {{ config(materialized='table') }}
-
-/*
- inline function to "tumble" datetimes into date bins
-*/
-
-
-    CREATE TEMP FUNCTION tumble_interval(
-     val TIMESTAMP, tumble_seconds INT64)
-    AS (
-     timestamp_seconds(div(UNIX_SECONDS(val), tumble_seconds) *  tumble_seconds));
-
-/*
-inline function to create the customer_id, datetime index onto which account data will be projected
-*/
-
-    CREATE TEMP FUNCTION
-     gen_ts_candidates(keys ARRAY<INT64>, tumble_seconds INT64, min_ts TIMESTAMP, max_ts Timestamp)
-    AS ((
-     SELECT ARRAY_AGG(x)
-     FROM (
-       SELECT series_key, tumble_val
-       FROM UNNEST(
-         GENERATE_TIMESTAMP_ARRAY(
-           tumble_interval(min_ts, tumble_seconds),
-           tumble_interval(max_ts, tumble_seconds),
-           INTERVAL tumble_seconds SECOND
-         )
-       ) AS tumble_val
-       CROSS JOIN UNNEST(keys) AS series_key
-     ) x
-    ));
 
 /*
 Project/aggregate cashflow data into tumbled bins and project onto customer_id, datetime index
@@ -52,7 +20,7 @@ Project/aggregate cashflow data into tumbled bins and project onto customer_id, 
     (
              SELECT   sum(amount) delta,
                       customer_id,
-                      tumble_interval(log_datetime, 21600) tumble
+                     {{target.schema}}.tumble_interval(log_datetime, 21600) tumble
              FROM     event_logs
              GROUP BY customer_id,
                       tumble
@@ -73,7 +41,7 @@ Project/aggregate cashflow data into tumbled bins and project onto customer_id, 
                                     delta              AS unfilled
                     FROM            unnest(
                                     (
-                                           SELECT gen_ts_candidates(KEY, 21600, min_ts, max_ts)
+                                           SELECT  {{target.schema}}.timeseries_index(KEY, 21600, min_ts, max_ts)
                                            FROM   args) ) a
                     LEFT OUTER JOIN agged_events b
                     ON              a.series_key = b.customer_id

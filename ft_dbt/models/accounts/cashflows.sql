@@ -61,7 +61,7 @@ WITH deposits AS
                        log_datetime)
 SELECT   *
 FROM     cashflows
-ORDER BY log_datetime ASC
+ORDER BY customer_id, log_datetime ASC
 
 /*
     Uncomment the line below to remove records with null `id` values
