@@ -1,9 +1,16 @@
-/*
+
+
+  create or replace table `ft-data-330317`.`ft_data`.`account_timeseries`
+  
+  
+  OPTIONS()
+  as (
+    /*
 A timeseries of account balances for each client binned every 4hrs.
 Can definitely be tidied up - e.g. not use inline functions but need to figure out how to do this in dbt
 */
 
-{{ config(materialized='table') }}
+
 
 /*
 Project/aggregate cashflow data into tumbled bins and project onto customer_id, datetime index
@@ -13,14 +20,14 @@ Project/aggregate cashflow data into tumbled bins and project onto customer_id, 
     (
              SELECT   * ,
                       sum(amount) OVER ( partition BY customer_id ORDER BY log_datetime rows BETWEEN UNBOUNDED PRECEDING AND      CURRENT row) AS balance
-             FROM     {{ ref('cashflows') }}
+             FROM     `ft-data-330317`.`ft_data`.`account_cashflows`
              ORDER BY log_datetime ASC),
 
           agged_events AS
     (
              SELECT   sum(amount) delta,
                       customer_id,
-                     {{target.schema}}.tumble_interval(log_datetime, 21600) tumble
+                     ft_data.tumble_interval(log_datetime, 21600) tumble
              FROM     event_logs
              GROUP BY customer_id,
                       tumble
@@ -41,7 +48,7 @@ Project/aggregate cashflow data into tumbled bins and project onto customer_id, 
                                     delta              AS unfilled
                     FROM            unnest(
                                     (
-                                           SELECT  {{target.schema}}.timeseries_index(KEY, 21600, min_ts, max_ts)
+                                           SELECT  ft_data.timeseries_index(KEY, 21600, min_ts, max_ts)
                                            FROM   args) ) a
                     LEFT OUTER JOIN agged_events b
                     ON              a.series_key = b.customer_id
@@ -55,3 +62,5 @@ Project/aggregate cashflow data into tumbled bins and project onto customer_id, 
     FROM     timeseries
     ORDER BY customer_id,
              tumble ASC
+  );
+    
