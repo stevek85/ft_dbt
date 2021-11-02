@@ -28,6 +28,9 @@ Idea here was to build a table of subscription revenue events - using the subscr
 
 Union of fx revenue cashflows and subscription_revenue_cashflows to provide an easy way to look at revenue over time broken down by source.
 
+![](https://github.com/stevek85/ft_dbt/blob/b18692e0f03eeffc79db7d49ac83cc18372c69fa/Screenshot%202021-11-02%20at%2020.19.04.png)
+
+
 
 
 
