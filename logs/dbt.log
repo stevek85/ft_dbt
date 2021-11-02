@@ -22262,3 +22262,622 @@ fx_revenues AS
 Done. PASS=5 WARN=0 ERROR=0 SKIP=0 TOTAL=5
 2021-11-02 19:11:20.375981 (MainThread): Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x11052fe80>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x11052fa00>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x11040b3a0>]}
 2021-11-02 19:11:20.376189 (MainThread): Flushing usage events
+2021-11-02 19:32:36.734882 (MainThread): Running with dbt=0.21.0
+2021-11-02 19:32:37.037161 (MainThread): running dbt with arguments Namespace(record_timing_info=None, debug=False, log_format='default', write_json=True, use_colors=None, strict=False, warn_error=False, partial_parse=None, single_threaded=False, test_new_parser=False, use_experimental_parser=False, project_dir=None, profiles_dir='/Users/stephenkyriacou/.dbt', profile=None, target=None, vars='{}', log_cache_events=False, use_cache=True, fail_fast=False, threads=None, version_check=True, select=None, exclude=None, selector_name=None, state=None, defer=None, full_refresh=True, cls=<class 'dbt.task.run.RunTask'>, which='run', rpc_method='run')
+2021-11-02 19:32:37.038427 (MainThread): Tracking: tracking
+2021-11-02 19:32:37.050199 (MainThread): Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10edf52e0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x110d87760>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x110d87190>]}
+2021-11-02 19:32:37.067906 (MainThread): Partial parsing not enabled
+2021-11-02 19:32:37.096088 (MainThread): Parsing macros/create_udfs.sql
+2021-11-02 19:32:37.097075 (MainThread): Parsing macros/udfs/tumble_interval.sql
+2021-11-02 19:32:37.097590 (MainThread): Parsing macros/udfs/timeseries_index.sql
+2021-11-02 19:32:37.098352 (MainThread): Parsing macros/etc.sql
+2021-11-02 19:32:37.100691 (MainThread): Parsing macros/catalog.sql
+2021-11-02 19:32:37.106798 (MainThread): Parsing macros/adapters.sql
+2021-11-02 19:32:37.128447 (MainThread): Parsing macros/materializations/seed.sql
+2021-11-02 19:32:37.130790 (MainThread): Parsing macros/materializations/view.sql
+2021-11-02 19:32:37.133187 (MainThread): Parsing macros/materializations/table.sql
+2021-11-02 19:32:37.143113 (MainThread): Parsing macros/materializations/copy.sql
+2021-11-02 19:32:37.145835 (MainThread): Parsing macros/materializations/incremental.sql
+2021-11-02 19:32:37.160541 (MainThread): Parsing macros/materializations/snapshot.sql
+2021-11-02 19:32:37.162207 (MainThread): Parsing macros/core.sql
+2021-11-02 19:32:37.165817 (MainThread): Parsing macros/materializations/test.sql
+2021-11-02 19:32:37.172291 (MainThread): Parsing macros/materializations/helpers.sql
+2021-11-02 19:32:37.181743 (MainThread): Parsing macros/materializations/snapshot/snapshot_merge.sql
+2021-11-02 19:32:37.183304 (MainThread): Parsing macros/materializations/snapshot/strategies.sql
+2021-11-02 19:32:37.199724 (MainThread): Parsing macros/materializations/snapshot/snapshot.sql
+2021-11-02 19:32:37.231489 (MainThread): Parsing macros/materializations/seed/seed.sql
+2021-11-02 19:32:37.253639 (MainThread): Parsing macros/materializations/incremental/helpers.sql
+2021-11-02 19:32:37.255256 (MainThread): Parsing macros/materializations/incremental/incremental.sql
+2021-11-02 19:32:37.264715 (MainThread): Parsing macros/materializations/incremental/on_schema_change.sql
+2021-11-02 19:32:37.284108 (MainThread): Parsing macros/materializations/common/merge.sql
+2021-11-02 19:32:37.297339 (MainThread): Parsing macros/materializations/table/table.sql
+2021-11-02 19:32:37.305712 (MainThread): Parsing macros/materializations/view/view.sql
+2021-11-02 19:32:37.320743 (MainThread): Parsing macros/materializations/view/create_or_replace_view.sql
+2021-11-02 19:32:37.327615 (MainThread): Parsing macros/etc/get_custom_alias.sql
+2021-11-02 19:32:37.330341 (MainThread): Parsing macros/etc/query.sql
+2021-11-02 19:32:37.332084 (MainThread): Parsing macros/etc/is_incremental.sql
+2021-11-02 19:32:37.336394 (MainThread): Parsing macros/etc/datetime.sql
+2021-11-02 19:32:37.354450 (MainThread): Parsing macros/etc/where_subquery.sql
+2021-11-02 19:32:37.360242 (MainThread): Parsing macros/etc/get_custom_schema.sql
+2021-11-02 19:32:37.364566 (MainThread): Parsing macros/etc/get_custom_database.sql
+2021-11-02 19:32:37.367282 (MainThread): Parsing macros/adapters/common.sql
+2021-11-02 19:32:37.473280 (MainThread): Parsing macros/schema_tests/relationships.sql
+2021-11-02 19:32:37.478253 (MainThread): Parsing macros/schema_tests/not_null.sql
+2021-11-02 19:32:37.480245 (MainThread): Parsing macros/schema_tests/unique.sql
+2021-11-02 19:32:37.482480 (MainThread): Parsing macros/schema_tests/accepted_values.sql
+2021-11-02 19:32:37.486199 (MainThread): Parsing macros/cross_db_utils/except.sql
+2021-11-02 19:32:37.487468 (MainThread): Parsing macros/cross_db_utils/replace.sql
+2021-11-02 19:32:37.488689 (MainThread): Parsing macros/cross_db_utils/concat.sql
+2021-11-02 19:32:37.489671 (MainThread): Parsing macros/cross_db_utils/datatypes.sql
+2021-11-02 19:32:37.495587 (MainThread): Parsing macros/cross_db_utils/_is_relation.sql
+2021-11-02 19:32:37.496727 (MainThread): Parsing macros/cross_db_utils/length.sql
+2021-11-02 19:32:37.497980 (MainThread): Parsing macros/cross_db_utils/dateadd.sql
+2021-11-02 19:32:37.501035 (MainThread): Parsing macros/cross_db_utils/intersect.sql
+2021-11-02 19:32:37.502488 (MainThread): Parsing macros/cross_db_utils/right.sql
+2021-11-02 19:32:37.504694 (MainThread): Parsing macros/cross_db_utils/datediff.sql
+2021-11-02 19:32:37.519885 (MainThread): Parsing macros/cross_db_utils/safe_cast.sql
+2021-11-02 19:32:37.522195 (MainThread): Parsing macros/cross_db_utils/hash.sql
+2021-11-02 19:32:37.523653 (MainThread): Parsing macros/cross_db_utils/cast_bool_to_text.sql
+2021-11-02 19:32:37.525096 (MainThread): Parsing macros/cross_db_utils/identifier.sql
+2021-11-02 19:32:37.527376 (MainThread): Parsing macros/cross_db_utils/position.sql
+2021-11-02 19:32:37.529838 (MainThread): Parsing macros/cross_db_utils/literal.sql
+2021-11-02 19:32:37.531313 (MainThread): Parsing macros/cross_db_utils/current_timestamp.sql
+2021-11-02 19:32:37.536963 (MainThread): Parsing macros/cross_db_utils/width_bucket.sql
+2021-11-02 19:32:37.545803 (MainThread): Parsing macros/cross_db_utils/last_day.sql
+2021-11-02 19:32:37.551151 (MainThread): Parsing macros/cross_db_utils/split_part.sql
+2021-11-02 19:32:37.554302 (MainThread): Parsing macros/cross_db_utils/date_trunc.sql
+2021-11-02 19:32:37.556419 (MainThread): Parsing macros/cross_db_utils/_is_ephemeral.sql
+2021-11-02 19:32:37.558392 (MainThread): Parsing macros/materializations/insert_by_period_materialization.sql
+2021-11-02 19:32:37.582719 (MainThread): Parsing macros/web/get_url_host.sql
+2021-11-02 19:32:37.584885 (MainThread): Parsing macros/web/get_url_path.sql
+2021-11-02 19:32:37.587476 (MainThread): Parsing macros/web/get_url_parameter.sql
+2021-11-02 19:32:37.589151 (MainThread): Parsing macros/jinja_helpers/pretty_log_format.sql
+2021-11-02 19:32:37.590320 (MainThread): Parsing macros/jinja_helpers/pretty_time.sql
+2021-11-02 19:32:37.591497 (MainThread): Parsing macros/jinja_helpers/log_info.sql
+2021-11-02 19:32:37.592563 (MainThread): Parsing macros/jinja_helpers/slugify.sql
+2021-11-02 19:32:37.593767 (MainThread): Parsing macros/schema_tests/fewer_rows_than.sql
+2021-11-02 19:32:37.595536 (MainThread): Parsing macros/schema_tests/equal_rowcount.sql
+2021-11-02 19:32:37.597116 (MainThread): Parsing macros/schema_tests/relationships_where.sql
+2021-11-02 19:32:37.599333 (MainThread): Parsing macros/schema_tests/recency.sql
+2021-11-02 19:32:37.600994 (MainThread): Parsing macros/schema_tests/not_constant.sql
+2021-11-02 19:32:37.602304 (MainThread): Parsing macros/schema_tests/accepted_range.sql
+2021-11-02 19:32:37.604847 (MainThread): Parsing macros/schema_tests/not_accepted_values.sql
+2021-11-02 19:32:37.606937 (MainThread): Parsing macros/schema_tests/test_unique_where.sql
+2021-11-02 19:32:37.608312 (MainThread): Parsing macros/schema_tests/at_least_one.sql
+2021-11-02 19:32:37.609504 (MainThread): Parsing macros/schema_tests/unique_combination_of_columns.sql
+2021-11-02 19:32:37.612250 (MainThread): Parsing macros/schema_tests/cardinality_equality.sql
+2021-11-02 19:32:37.614263 (MainThread): Parsing macros/schema_tests/expression_is_true.sql
+2021-11-02 19:32:37.615985 (MainThread): Parsing macros/schema_tests/not_null_proportion.sql
+2021-11-02 19:32:37.618219 (MainThread): Parsing macros/schema_tests/sequential_values.sql
+2021-11-02 19:32:37.620970 (MainThread): Parsing macros/schema_tests/test_not_null_where.sql
+2021-11-02 19:32:37.622337 (MainThread): Parsing macros/schema_tests/equality.sql
+2021-11-02 19:32:37.625753 (MainThread): Parsing macros/schema_tests/mutually_exclusive_ranges.sql
+2021-11-02 19:32:37.634332 (MainThread): Parsing macros/sql/date_spine.sql
+2021-11-02 19:32:37.638831 (MainThread): Parsing macros/sql/nullcheck_table.sql
+2021-11-02 19:32:37.640435 (MainThread): Parsing macros/sql/get_relations_by_pattern.sql
+2021-11-02 19:32:37.643732 (MainThread): Parsing macros/sql/generate_series.sql
+2021-11-02 19:32:37.647778 (MainThread): Parsing macros/sql/get_relations_by_prefix.sql
+2021-11-02 19:32:37.650944 (MainThread): Parsing macros/sql/get_tables_by_prefix_sql.sql
+2021-11-02 19:32:37.652674 (MainThread): Parsing macros/sql/star.sql
+2021-11-02 19:32:37.655974 (MainThread): Parsing macros/sql/unpivot.sql
+2021-11-02 19:32:37.663538 (MainThread): Parsing macros/sql/union.sql
+2021-11-02 19:32:37.671470 (MainThread): Parsing macros/sql/groupby.sql
+2021-11-02 19:32:37.672731 (MainThread): Parsing macros/sql/surrogate_key.sql
+2021-11-02 19:32:37.675986 (MainThread): Parsing macros/sql/safe_add.sql
+2021-11-02 19:32:37.677496 (MainThread): Parsing macros/sql/nullcheck.sql
+2021-11-02 19:32:37.679055 (MainThread): Parsing macros/sql/get_tables_by_pattern_sql.sql
+2021-11-02 19:32:37.685390 (MainThread): Parsing macros/sql/get_column_values.sql
+2021-11-02 19:32:37.690183 (MainThread): Parsing macros/sql/pivot.sql
+2021-11-02 19:32:37.693935 (MainThread): Parsing macros/sql/get_query_results_as_dict.sql
+2021-11-02 19:32:37.696071 (MainThread): Parsing macros/sql/haversine_distance.sql
+2021-11-02 19:32:38.032386 (MainThread): Acquiring new bigquery connection "model.freetrade_test.account_cashflows".
+2021-11-02 19:32:38.045209 (MainThread): Acquiring new bigquery connection "model.freetrade_test.withdrawable_cash_timeseries".
+2021-11-02 19:32:38.049807 (MainThread): Acquiring new bigquery connection "model.freetrade_test.revenue_cashflows".
+2021-11-02 19:32:38.054277 (MainThread): Acquiring new bigquery connection "model.freetrade_test.fx_revenue_cashflows".
+2021-11-02 19:32:38.057729 (MainThread): Acquiring new bigquery connection "model.freetrade_test.subscription_revenue_cashflows".
+2021-11-02 19:32:38.091955 (MainThread): Acquiring new bigquery connection "operation.freetrade_test.freetrade_test-on-run-start-0".
+2021-11-02 19:32:38.129861 (MainThread): 'soft_unicode' has been renamed to 'soft_str'. The old name will be removed in MarkupSafe 2.1.
+2021-11-02 19:32:38.131595 (MainThread): 'soft_unicode' has been renamed to 'soft_str'. The old name will be removed in MarkupSafe 2.1.
+2021-11-02 19:32:38.193215 (MainThread): [WARNING]: Configuration paths exist in your dbt_project.yml file which do not apply to any resources.
+There are 1 unused configuration paths:
+- models.freetrade_test.example
+
+2021-11-02 19:32:38.199718 (MainThread): Sending event: {'category': 'dbt', 'action': 'load_project', 'label': 'b00754d8-d842-4b4a-933e-cf0d1fcfa1a8', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x110f88130>]}
+2021-11-02 19:32:38.209349 (MainThread): write_gpickle is deprecated and will be removed in 3.0.Use ``pickle.dump(G, path, protocol)``
+2021-11-02 19:32:38.209843 (MainThread): Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': 'b00754d8-d842-4b4a-933e-cf0d1fcfa1a8', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x110f880a0>]}
+2021-11-02 19:32:38.210114 (MainThread): Found 5 models, 2 tests, 0 snapshots, 0 analyses, 374 macros, 1 operation, 0 seed files, 0 sources, 0 exposures
+2021-11-02 19:32:38.211572 (MainThread): 
+2021-11-02 19:32:38.211945 (MainThread): Acquiring new bigquery connection "master".
+2021-11-02 19:32:38.213213 (ThreadPoolExecutor-0_0): Acquiring new bigquery connection "list_ft-data-330317".
+2021-11-02 19:32:38.213408 (ThreadPoolExecutor-0_0): Opening a new connection, currently in state init
+2021-11-02 19:32:38.659412 (ThreadPoolExecutor-1_0): Acquiring new bigquery connection "list_ft-data-330317_ft_data".
+2021-11-02 19:32:38.660042 (ThreadPoolExecutor-1_0): Opening a new connection, currently in state closed
+2021-11-02 19:32:38.672191 (ThreadPoolExecutor-1_0): Client.dataset is deprecated and will be removed in a future version. Use a string like 'my_project.my_dataset' or a cloud.google.bigquery.DatasetReference object, instead.
+2021-11-02 19:32:38.994114 (MainThread): 19:32:38 | 
+2021-11-02 19:32:38.994658 (MainThread): 19:32:38 | Running 1 on-run-start hook
+2021-11-02 19:32:38.995065 (MainThread): Compiling operation.freetrade_test.freetrade_test-on-run-start-0
+2021-11-02 19:32:39.000851 (MainThread): Writing injected SQL for node "operation.freetrade_test.freetrade_test-on-run-start-0"
+2021-11-02 19:32:39.003560 (MainThread): 19:32:39 | 1 of 1 START hook: freetrade_test.on-run-start.0..................... [RUN]
+2021-11-02 19:32:39.003955 (MainThread): Opening a new connection, currently in state closed
+2021-11-02 19:32:39.013048 (MainThread): On master: /* {"app": "dbt", "dbt_version": "0.21.0", "profile_name": "freetrade_test", "target_name": "dev", "connection_name": "master"} */
+
+
+create schema if not exists ft_data;
+
+
+    CREATE OR REPLACE FUNCTION ft_data.tumble_interval(
+     val TIMESTAMP, tumble_seconds INT64)
+    AS (
+     timestamp_seconds(div(UNIX_SECONDS(val), tumble_seconds) *  tumble_seconds))
+;
+
+
+    CREATE OR REPLACE FUNCTION
+     ft_data.timeseries_index(keys ARRAY<INT64>, tumble_seconds INT64, min_ts TIMESTAMP, max_ts Timestamp)
+    AS ((
+     SELECT ARRAY_AGG(x)
+     FROM (
+       SELECT series_key, tumble_val
+       FROM UNNEST(
+         GENERATE_TIMESTAMP_ARRAY(
+           ft_data.tumble_interval(min_ts, tumble_seconds),
+           ft_data.tumble_interval(max_ts, tumble_seconds),
+           INTERVAL tumble_seconds SECOND
+         )
+       ) AS tumble_val
+       CROSS JOIN UNNEST(keys) AS series_key
+     ) x
+    ))
+;
+
+
+2021-11-02 19:32:41.777942 (MainThread): 19:32:41 | 1 of 1 OK hook: freetrade_test.on-run-start.0........................ [SCRIPT (0.0 Bytes processed) in 2.77s]
+2021-11-02 19:32:41.778529 (MainThread): 19:32:41 | 
+2021-11-02 19:32:41.779264 (MainThread): 19:32:41 | Concurrency: 4 threads (target='dev')
+2021-11-02 19:32:41.779545 (MainThread): 19:32:41 | 
+2021-11-02 19:32:41.782770 (Thread-1): Began running node model.freetrade_test.account_cashflows
+2021-11-02 19:32:41.783149 (Thread-2): Began running node model.freetrade_test.fx_revenue_cashflows
+2021-11-02 19:32:41.783616 (Thread-1): 19:32:41 | 1 of 5 START table model ft_data.account_cashflows................... [RUN]
+2021-11-02 19:32:41.783850 (Thread-3): Began running node model.freetrade_test.subscription_revenue_cashflows
+2021-11-02 19:32:41.784490 (Thread-2): 19:32:41 | 2 of 5 START table model ft_data.fx_revenue_cashflows................ [RUN]
+2021-11-02 19:32:41.785076 (Thread-1): Acquiring new bigquery connection "model.freetrade_test.account_cashflows".
+2021-11-02 19:32:41.785427 (Thread-3): 19:32:41 | 3 of 5 START table model ft_data.subscription_revenue_cashflows...... [RUN]
+2021-11-02 19:32:41.785900 (Thread-2): Acquiring new bigquery connection "model.freetrade_test.fx_revenue_cashflows".
+2021-11-02 19:32:41.786150 (Thread-1): Compiling model.freetrade_test.account_cashflows
+2021-11-02 19:32:41.786683 (Thread-3): Acquiring new bigquery connection "model.freetrade_test.subscription_revenue_cashflows".
+2021-11-02 19:32:41.786909 (Thread-2): Compiling model.freetrade_test.fx_revenue_cashflows
+2021-11-02 19:32:41.791449 (Thread-1): Writing injected SQL for node "model.freetrade_test.account_cashflows"
+2021-11-02 19:32:41.791663 (Thread-3): Compiling model.freetrade_test.subscription_revenue_cashflows
+2021-11-02 19:32:41.794766 (Thread-2): Writing injected SQL for node "model.freetrade_test.fx_revenue_cashflows"
+2021-11-02 19:32:41.802548 (Thread-3): Opening a new connection, currently in state init
+2021-11-02 19:32:41.802919 (Thread-1): finished collecting timing info
+2021-11-02 19:32:41.809824 (Thread-2): finished collecting timing info
+2021-11-02 19:32:41.815791 (Thread-1): unclosed <ssl.SSLSocket fd=10, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('192.168.0.111', 55538), raddr=('142.250.187.202', 443)>
+2021-11-02 19:32:41.822493 (Thread-1): unclosed <ssl.SSLSocket fd=11, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('192.168.0.111', 55539), raddr=('216.58.212.202', 443)>
+2021-11-02 19:32:41.822750 (Thread-3): On model.freetrade_test.subscription_revenue_cashflows: /* {"app": "dbt", "dbt_version": "0.21.0", "profile_name": "freetrade_test", "target_name": "dev", "node_id": "model.freetrade_test.subscription_revenue_cashflows"} */
+
+
+        select 
+
+    datetime_diff(
+        cast(cast('2022-01-01' as date) as datetime),
+        cast(cast('2021-01-01' as date) as datetime),
+        month
+    )
+
+
+2021-11-02 19:32:41.823441 (Thread-1): unclosed <ssl.SSLSocket fd=12, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('192.168.0.111', 55540), raddr=('142.250.187.202', 443)>
+2021-11-02 19:32:41.830333 (Thread-2): Opening a new connection, currently in state init
+2021-11-02 19:32:41.830643 (Thread-1): unclosed <ssl.SSLSocket fd=13, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('192.168.0.111', 55541), raddr=('216.58.212.202', 443)>
+2021-11-02 19:32:41.840828 (Thread-1): Opening a new connection, currently in state closed
+2021-11-02 19:32:41.845980 (Thread-2): Client.dataset is deprecated and will be removed in a future version. Use a string like 'my_project.my_dataset' or a cloud.google.bigquery.DatasetReference object, instead.
+2021-11-02 19:32:41.846710 (Thread-1): Client.dataset is deprecated and will be removed in a future version. Use a string like 'my_project.my_dataset' or a cloud.google.bigquery.DatasetReference object, instead.
+2021-11-02 19:32:42.201090 (Thread-1): Writing runtime SQL for node "model.freetrade_test.account_cashflows"
+2021-11-02 19:32:42.201377 (Thread-2): Writing runtime SQL for node "model.freetrade_test.fx_revenue_cashflows"
+2021-11-02 19:32:42.201933 (Thread-1): On model.freetrade_test.account_cashflows: /* {"app": "dbt", "dbt_version": "0.21.0", "profile_name": "freetrade_test", "target_name": "dev", "node_id": "model.freetrade_test.account_cashflows"} */
+
+
+  create or replace table `ft-data-330317`.`ft_data`.`account_cashflows`
+  
+  
+  OPTIONS()
+  as (
+    /*
+    Welcome to your first dbt model!
+    Did you know that you can also configure models directly within SQL files?
+    This will override configurations stated in dbt_project.yml
+
+    Try changing "table" to "view" below
+*/
+
+
+
+WITH deposits AS
+(
+       SELECT customer_id,
+              deposited_at  AS log_datetime,
+              amount_in_gbp AS amount,
+              "deposit"     AS transaction_type
+       FROM   `ft-data-330317.ft_source_data.deposits`), withdrawals AS
+(
+       SELECT customer_id,
+              requested_at AS log_datetime,
+              -amount      AS amount,
+              "withdrawal" AS transaction_type
+       FROM   `ft-data-330317.ft_source_data.withdrawals`),
+
+       buys AS
+(
+       SELECT customer_id,
+              executed_at AS log_datetime,
+              -value      AS amount,
+              "buy"       AS transaction_type,
+       FROM   `ft-data-330317.ft_source_data.orders`
+       WHERE  side = 'buy'),
+
+       sells AS
+(
+       SELECT customer_id,
+              executed_at AS log_datetime,
+              value       AS amount,
+              "sell"      AS transaction_type,
+       FROM   `ft-data-330317.ft_source_data.orders`
+       WHERE  side = 'sell'),
+
+       cashflows AS
+(
+       SELECT *
+       FROM   withdrawals
+       UNION ALL
+                 (
+                        SELECT *
+                        FROM   deposits)
+          UNION ALL
+                    (
+                           SELECT *
+                           FROM   buys)
+             UNION ALL
+                       (
+                              SELECT *
+                              FROM   sells)
+             ORDER BY  customer_id,
+                       log_datetime)
+SELECT   *
+FROM     cashflows
+ORDER BY customer_id, log_datetime ASC
+
+/*
+    Uncomment the line below to remove records with null `id` values
+*/
+
+-- where id is not null
+  );
+    
+2021-11-02 19:32:42.203021 (Thread-2): On model.freetrade_test.fx_revenue_cashflows: /* {"app": "dbt", "dbt_version": "0.21.0", "profile_name": "freetrade_test", "target_name": "dev", "node_id": "model.freetrade_test.fx_revenue_cashflows"} */
+
+
+  create or replace table `ft-data-330317`.`ft_data`.`fx_revenue_cashflows`
+  
+  
+  OPTIONS()
+  as (
+    
+
+/* Assume here that FT take 1% charge on US orders */
+
+SELECT customer_id, 0.01 * value as amount,
+       order_id, settled_at as datetime FROM `ft-data-330317.ft_source_data.orders` where instrument_country = 'US'
+
+ORDER BY datetime ASC
+  );
+    
+2021-11-02 19:32:42.767513 (Thread-3): Writing injected SQL for node "model.freetrade_test.subscription_revenue_cashflows"
+2021-11-02 19:32:42.768428 (Thread-3): finished collecting timing info
+2021-11-02 19:32:42.772494 (Thread-3): Client.dataset is deprecated and will be removed in a future version. Use a string like 'my_project.my_dataset' or a cloud.google.bigquery.DatasetReference object, instead.
+2021-11-02 19:32:42.909171 (Thread-3): Writing runtime SQL for node "model.freetrade_test.subscription_revenue_cashflows"
+2021-11-02 19:32:42.910423 (Thread-3): On model.freetrade_test.subscription_revenue_cashflows: /* {"app": "dbt", "dbt_version": "0.21.0", "profile_name": "freetrade_test", "target_name": "dev", "node_id": "model.freetrade_test.subscription_revenue_cashflows"} */
+
+
+  create or replace table `ft-data-330317`.`ft_data`.`subscription_revenue_cashflows`
+  
+  
+  OPTIONS()
+  as (
+    
+
+with months as (
+
+/*
+call as follows:
+
+date_spine(
+    "day",
+    "to_date('01/01/2016', 'mm/dd/yyyy')",
+    "dateadd(week, 1, current_date)"
+)
+
+*/
+
+with rawdata as (
+
+    
+
+    
+
+    with p as (
+        select 0 as generated_number union all select 1
+    ), unioned as (
+
+    select
+
+    
+    p0.generated_number * power(2, 0)
+     + 
+    
+    p1.generated_number * power(2, 1)
+     + 
+    
+    p2.generated_number * power(2, 2)
+     + 
+    
+    p3.generated_number * power(2, 3)
+    
+    
+    + 1
+    as generated_number
+
+    from
+
+    
+    p as p0
+     cross join 
+    
+    p as p1
+     cross join 
+    
+    p as p2
+     cross join 
+    
+    p as p3
+    
+    
+
+    )
+
+    select *
+    from unioned
+    where generated_number <= 12
+    order by generated_number
+
+
+
+),
+
+all_periods as (
+
+    select (
+        
+
+        datetime_add(
+            cast( cast('2021-01-01' as date) as datetime),
+        interval row_number() over (order by 1) - 1 month
+        )
+
+
+    ) as date_month
+    from rawdata
+
+),
+
+filtered as (
+
+    select *
+    from all_periods
+    where date_month <= cast('2022-01-01' as date)
+
+)
+
+select * from filtered
+
+)
+
+select
+    subscriptions.customer_id,
+    subscriptions.subscription_id,
+    subscriptions.monthly_fee as amount,
+    subscriptions.subscription_type,
+    DATE_ADD(months.date_month, INTERVAL (
+        EXTRACT(DAY FROM subscriptions.created_at) - EXTRACT(DAY FROM months.date_month)) DAY) as billing_date
+
+from `ft-data-330317.ft_source_data.subscriptions` subscriptions
+
+join months
+    -- all months after start date
+    on  months.date_month >= DATE(subscriptions.created_at)
+    -- and before end date
+    and months.date_month <= DATE('2022-01-01')
+
+ORDER BY customer_id, date_month ASC
+  );
+    
+2021-11-02 19:32:44.170505 (Thread-2): finished collecting timing info
+2021-11-02 19:32:44.171243 (Thread-2): Sending event: {'category': 'dbt', 'action': 'run_model', 'label': 'b00754d8-d842-4b4a-933e-cf0d1fcfa1a8', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x110f9ec10>]}
+2021-11-02 19:32:44.171778 (Thread-2): 19:32:44 | 2 of 5 OK created table model ft_data.fx_revenue_cashflows........... [CREATE TABLE (15.3k rows, 2.1 MB processed) in 2.39s]
+2021-11-02 19:32:44.172043 (Thread-2): Finished running node model.freetrade_test.fx_revenue_cashflows
+2021-11-02 19:32:44.400114 (Thread-1): finished collecting timing info
+2021-11-02 19:32:44.401213 (Thread-1): Sending event: {'category': 'dbt', 'action': 'run_model', 'label': 'b00754d8-d842-4b4a-933e-cf0d1fcfa1a8', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x110e7ee50>]}
+2021-11-02 19:32:44.402008 (Thread-1): 19:32:44 | 1 of 5 OK created table model ft_data.account_cashflows.............. [CREATE TABLE (37.9k rows, 1.0 MB processed) in 2.62s]
+2021-11-02 19:32:44.402308 (Thread-1): Finished running node model.freetrade_test.account_cashflows
+2021-11-02 19:32:44.402982 (Thread-4): Began running node model.freetrade_test.withdrawable_cash_timeseries
+2021-11-02 19:32:44.403445 (Thread-4): 19:32:44 | 4 of 5 START table model ft_data.withdrawable_cash_timeseries........ [RUN]
+2021-11-02 19:32:44.404007 (Thread-4): Acquiring new bigquery connection "model.freetrade_test.withdrawable_cash_timeseries".
+2021-11-02 19:32:44.404275 (Thread-4): Compiling model.freetrade_test.withdrawable_cash_timeseries
+2021-11-02 19:32:44.410474 (Thread-4): Writing injected SQL for node "model.freetrade_test.withdrawable_cash_timeseries"
+2021-11-02 19:32:44.411165 (Thread-4): finished collecting timing info
+2021-11-02 19:32:44.414217 (Thread-4): Opening a new connection, currently in state init
+2021-11-02 19:32:44.421690 (Thread-4): Client.dataset is deprecated and will be removed in a future version. Use a string like 'my_project.my_dataset' or a cloud.google.bigquery.DatasetReference object, instead.
+2021-11-02 19:32:44.727025 (Thread-4): Writing runtime SQL for node "model.freetrade_test.withdrawable_cash_timeseries"
+2021-11-02 19:32:44.729243 (Thread-4): On model.freetrade_test.withdrawable_cash_timeseries: /* {"app": "dbt", "dbt_version": "0.21.0", "profile_name": "freetrade_test", "target_name": "dev", "node_id": "model.freetrade_test.withdrawable_cash_timeseries"} */
+
+
+  create or replace table `ft-data-330317`.`ft_data`.`withdrawable_cash_timeseries`
+  
+  
+  OPTIONS()
+  as (
+    /*
+A timeseries of account balances for each client binned every 4hrs.
+Can definitely be tidied up - e.g. not use inline functions but need to figure out how to do this in dbt
+*/
+
+
+
+/*
+Project/aggregate cashflow data into tumbled bins and project onto customer_id, datetime index
+*/
+
+    WITH event_logs AS
+    (
+             SELECT   * ,
+                      sum(amount) OVER ( partition BY customer_id ORDER BY log_datetime rows BETWEEN UNBOUNDED PRECEDING AND      CURRENT row) AS balance
+             FROM     `ft-data-330317`.`ft_data`.`account_cashflows`
+             ORDER BY log_datetime ASC),
+
+          agged_events AS
+    (
+             SELECT   sum(amount) delta,
+                      customer_id,
+                     ft_data.tumble_interval(log_datetime, 21600) tumble
+             FROM     event_logs
+             GROUP BY customer_id,
+                      tumble
+             ORDER BY customer_id,
+                      tumble ASC ),
+           args AS
+    (
+           SELECT array_agg(DISTINCT customer_id) AS KEY,
+                  min(tumble)                     AS min_ts,
+                  max(tumble)                     AS max_ts
+           FROM   agged_events ),
+
+           timeseries AS
+    (
+                    SELECT          series_key         AS customer_id,
+                                    tumble_val         AS tumble,
+                                    COALESCE(delta, 0) AS def,
+                                    delta              AS unfilled
+                    FROM            unnest(
+                                    (
+                                           SELECT  ft_data.timeseries_index(KEY, 21600, min_ts, max_ts)
+                                           FROM   args) ) a
+                    LEFT OUTER JOIN agged_events b
+                    ON              a.series_key = b.customer_id
+                    AND             a.tumble_val = b.tumble
+                    ORDER BY        customer_id,
+                                    tumble_val DESC)
+
+    SELECT   customer_id,
+             tumble                                                                                                           AS datetime,
+             sum(def) OVER ( partition BY customer_id ORDER BY tumble rows BETWEEN UNBOUNDED PRECEDING AND      CURRENT row ) AS account_balance
+    FROM     timeseries
+    ORDER BY customer_id,
+             tumble ASC
+  );
+    
+2021-11-02 19:32:45.129399 (Thread-3): finished collecting timing info
+2021-11-02 19:32:45.130495 (Thread-3): Sending event: {'category': 'dbt', 'action': 'run_model', 'label': 'b00754d8-d842-4b4a-933e-cf0d1fcfa1a8', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1111c8f40>]}
+2021-11-02 19:32:45.131256 (Thread-3): 19:32:45 | 3 of 5 OK created table model ft_data.subscription_revenue_cashflows. [CREATE TABLE (5.1k rows, 38.2 KB processed) in 3.34s]
+2021-11-02 19:32:45.131561 (Thread-3): Finished running node model.freetrade_test.subscription_revenue_cashflows
+2021-11-02 19:32:45.132172 (Thread-1): Began running node model.freetrade_test.revenue_cashflows
+2021-11-02 19:32:45.132635 (Thread-1): 19:32:45 | 5 of 5 START table model ft_data.revenue_cashflows................... [RUN]
+2021-11-02 19:32:45.133171 (Thread-1): Acquiring new bigquery connection "model.freetrade_test.revenue_cashflows".
+2021-11-02 19:32:45.133428 (Thread-1): Compiling model.freetrade_test.revenue_cashflows
+2021-11-02 19:32:45.139754 (Thread-1): Writing injected SQL for node "model.freetrade_test.revenue_cashflows"
+2021-11-02 19:32:45.140453 (Thread-1): finished collecting timing info
+2021-11-02 19:32:45.143446 (Thread-1): Opening a new connection, currently in state closed
+2021-11-02 19:32:45.150734 (Thread-1): Client.dataset is deprecated and will be removed in a future version. Use a string like 'my_project.my_dataset' or a cloud.google.bigquery.DatasetReference object, instead.
+2021-11-02 19:32:45.461359 (Thread-1): Writing runtime SQL for node "model.freetrade_test.revenue_cashflows"
+2021-11-02 19:32:45.462471 (Thread-1): On model.freetrade_test.revenue_cashflows: /* {"app": "dbt", "dbt_version": "0.21.0", "profile_name": "freetrade_test", "target_name": "dev", "node_id": "model.freetrade_test.revenue_cashflows"} */
+
+
+  create or replace table `ft-data-330317`.`ft_data`.`revenue_cashflows`
+  
+  
+  OPTIONS()
+  as (
+    
+
+WITH isa_revenues AS
+(
+       SELECT customer_id,
+              TIMESTAMP(billing_date)  AS transaction_datetime,
+              amount,
+              "isa_monthly_fee" AS transaction_type
+       FROM   `ft-data-330317`.`ft_data`.`subscription_revenue_cashflows` where
+       subscription_type = 'isa'),
+
+sipp_revenues AS
+
+(
+
+       SELECT customer_id,
+              TIMESTAMP(billing_date)  AS transaction_datetime,
+              amount,
+              "sipp_monthly_fee" AS transaction_type
+       FROM   `ft-data-330317`.`ft_data`.`subscription_revenue_cashflows`
+       where subscription_type = 'sipp'),
+
+fx_revenues AS
+
+(SELECT customer_id, datetime AS transaction_datetime, amount, 'US_fx_charge' as transaction_type
+ FROM `ft-data-330317`.`ft_data`.`fx_revenue_cashflows`
+)
+
+
+       SELECT *
+       FROM   isa_revenues
+       UNION ALL
+                 (
+                    SELECT *
+                        FROM   sipp_revenues )
+          UNION ALL
+                    (
+                           SELECT *
+                           FROM   fx_revenues)
+
+             ORDER BY  customer_id,
+                       transaction_datetime
+  );
+    
+2021-11-02 19:32:47.410477 (Thread-1): finished collecting timing info
+2021-11-02 19:32:47.411566 (Thread-1): Sending event: {'category': 'dbt', 'action': 'run_model', 'label': 'b00754d8-d842-4b4a-933e-cf0d1fcfa1a8', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x112232c70>]}
+2021-11-02 19:32:47.412303 (Thread-1): 19:32:47 | 5 of 5 OK created table model ft_data.revenue_cashflows.............. [CREATE TABLE (20.4k rows, 503.1 KB processed) in 2.28s]
+2021-11-02 19:32:47.412604 (Thread-1): Finished running node model.freetrade_test.revenue_cashflows
+2021-11-02 19:32:49.787927 (Thread-4): finished collecting timing info
+2021-11-02 19:32:49.789045 (Thread-4): Sending event: {'category': 'dbt', 'action': 'run_model', 'label': 'b00754d8-d842-4b4a-933e-cf0d1fcfa1a8', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x110f392e0>]}
+2021-11-02 19:32:49.789827 (Thread-4): 19:32:49 | 4 of 5 OK created table model ft_data.withdrawable_cash_timeseries... [CREATE TABLE (1.1m rows, 888.4 KB processed) in 5.39s]
+2021-11-02 19:32:49.790123 (Thread-4): Finished running node model.freetrade_test.withdrawable_cash_timeseries
+2021-11-02 19:32:49.792117 (MainThread): Acquiring new bigquery connection "master".
+2021-11-02 19:32:49.792757 (MainThread): 19:32:49 | 
+2021-11-02 19:32:49.793048 (MainThread): 19:32:49 | Finished running 5 table models, 1 hook in 11.58s.
+2021-11-02 19:32:49.793296 (MainThread): Connection 'master' was properly closed.
+2021-11-02 19:32:49.793520 (MainThread): Connection 'model.freetrade_test.revenue_cashflows' was properly closed.
+2021-11-02 19:32:49.793721 (MainThread): Connection 'model.freetrade_test.fx_revenue_cashflows' was properly closed.
+2021-11-02 19:32:49.793909 (MainThread): Connection 'model.freetrade_test.subscription_revenue_cashflows' was properly closed.
+2021-11-02 19:32:49.794090 (MainThread): Connection 'model.freetrade_test.withdrawable_cash_timeseries' was properly closed.
+2021-11-02 19:32:49.797641 (MainThread): unclosed <ssl.SSLSocket fd=12, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('192.168.0.111', 55544), raddr=('142.250.187.202', 443)>
+2021-11-02 19:32:49.797941 (MainThread): unclosed <ssl.SSLSocket fd=13, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('192.168.0.111', 55547), raddr=('216.58.212.202', 443)>
+2021-11-02 19:32:49.798185 (MainThread): unclosed <ssl.SSLSocket fd=11, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('192.168.0.111', 55546), raddr=('142.250.187.202', 443)>
+2021-11-02 19:32:49.798413 (MainThread): unclosed <ssl.SSLSocket fd=10, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('192.168.0.111', 55545), raddr=('142.250.187.202', 443)>
+2021-11-02 19:32:49.798640 (MainThread): unclosed <ssl.SSLSocket fd=20, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('192.168.0.111', 55548), raddr=('216.58.212.202', 443)>
+2021-11-02 19:32:49.798868 (MainThread): unclosed <ssl.SSLSocket fd=21, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('192.168.0.111', 55549), raddr=('216.58.212.202', 443)>
+2021-11-02 19:32:49.799165 (MainThread): unclosed <ssl.SSLSocket fd=23, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('192.168.0.111', 55551), raddr=('216.58.212.202', 443)>
+2021-11-02 19:32:49.799401 (MainThread): unclosed <ssl.SSLSocket fd=22, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('192.168.0.111', 55550), raddr=('142.250.187.202', 443)>
+2021-11-02 19:32:49.799654 (MainThread): unclosed <ssl.SSLSocket fd=24, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('192.168.0.111', 55552), raddr=('142.250.187.202', 443)>
+2021-11-02 19:32:49.799868 (MainThread): unclosed <ssl.SSLSocket fd=25, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('192.168.0.111', 55553), raddr=('216.58.212.202', 443)>
+2021-11-02 19:32:49.827732 (MainThread): 
+2021-11-02 19:32:49.827967 (MainThread): Completed successfully
+2021-11-02 19:32:49.828153 (MainThread): 
+Done. PASS=5 WARN=0 ERROR=0 SKIP=0 TOTAL=5
+2021-11-02 19:32:49.828359 (MainThread): Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x110d87b80>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x110e77d90>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x110ef5460>]}
+2021-11-02 19:32:49.828567 (MainThread): Flushing usage events

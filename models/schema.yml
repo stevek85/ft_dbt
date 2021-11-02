@@ -38,19 +38,34 @@ models:
       - name: order_id
         description: "unique order id - fk to orders table"
       - name: amount
-        description: "cash amount of revenue cashflow (1% of order value)"
+        description: "cash amount (GBP) of revenue cashflow (1% of order value)"
 
   - name: subscription_revenue_cashflows
-    description: "revenue events from projected subscription payments."
+    description: "revenue events from projected subscription payments"
     columns:
       - name: customer_id
         description: "customer/client id"
-      - name: datetime
-        description: "datetime of US buy/sell order settlement - and therefore revenue cashflow"
-      - name: order_id
-        description: "unique order id - fk to orders table"
+      - name: subscription_id
+        description: "uniqiue subscription_id"
       - name: amount
-        description: "cash amount of revenue cashflow (1% of order value)"
+        description: "amount of subscription payment (GBP)"
+      - name: subscription_type
+        description: "sipp or isa"
+      - name: billing_date
+        description: "date of billing - first one is 1 month after subscription start date"
+
+  - name: revenue_cashflows
+    description: "combined table of fx and subscription revenue cashflows"
+    columns:
+      - name: customer_id
+        description: "customer/client id"
+      - name: transaction_datetime
+        description: "datetime of revenue cashflow"
+      - name: amount
+        description: "revenue amount (GBP)"
+      - name: source
+        description: "revenue source - isa, sipp or US FX"  
+
 
 
 
