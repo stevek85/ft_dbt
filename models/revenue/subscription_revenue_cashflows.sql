@@ -14,7 +14,7 @@ select
     subscriptions.monthly_fee as amount,
     subscriptions.subscription_type,
     DATE_ADD(months.date_month, INTERVAL (
-        EXTRACT(DAY FROM subscriptions.created_at) - EXTRACT(DAY FROM months.date_month) - 15) DAY) as billing_date
+        EXTRACT(DAY FROM subscriptions.created_at) - EXTRACT(DAY FROM months.date_month)) DAY) as billing_date
 
 from `ft-data-330317.ft_source_data.subscriptions` subscriptions
 

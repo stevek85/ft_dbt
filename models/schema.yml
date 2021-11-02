@@ -2,20 +2,56 @@
 version: 2
 
 models:
-  - name: my_first_dbt_model
-    description: "A starter dbt model"
+  - name: account_cashflows
+    description: "A superset of all cashflows going in/out of a customers account. These include buy/sell orders,
+    deposits and withdrawals"
     columns:
-      - name: id
-        description: "The primary key for this table"
+      - name: customer_id
+        description: "customer/client id"
         tests:
           - unique
           - not_null
+      - name: log_datetime
+        description: "datetime of cashflow log"
+      - name: amount
+        description: "amount in GBP of cashflow"
+      - name: transaction_type
+        description: "type of cashflow - e.g deposit, withdrawal, buy order, sell order"
 
-  - name: my_second_dbt_model
-    description: "A starter dbt model"
+  - name: withdrawable_cash_timeseries
+    description: "withdrawable balance constructed from account cashflows"
     columns:
-      - name: id
-        description: "The primary key for this table"
-        tests:
-          - unique
-          - not_null
+      - name: customer_id
+        description: "customer/client id"
+      - name: datetime
+        description: "datetime of account balance snapshot - intervals of 6 hrs"
+      - name: account_balance
+        description: "withdrawable cash in account"
+
+  - name: fx_revenue_cashflows
+    description: "revenue events from US dollar buy/sell orders. Assumed 1% of order value"
+    columns:
+      - name: customer_id
+        description: "customer/client id"
+      - name: datetime
+        description: "datetime of US buy/sell order settlement - and therefore revenue cashflow"
+      - name: order_id
+        description: "unique order id - fk to orders table"
+      - name: amount
+        description: "cash amount of revenue cashflow (1% of order value)"
+
+  - name: subscription_revenue_cashflows
+    description: "revenue events from projected subscription payments."
+    columns:
+      - name: customer_id
+        description: "customer/client id"
+      - name: datetime
+        description: "datetime of US buy/sell order settlement - and therefore revenue cashflow"
+      - name: order_id
+        description: "unique order id - fk to orders table"
+      - name: amount
+        description: "cash amount of revenue cashflow (1% of order value)"
+
+
+
+
