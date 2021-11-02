@@ -16,6 +16,8 @@ This is simply a union of deposits, withdrawals, buys and sells. The idea here i
 2.  Create a timeseries index per customer by performing an outer join between a timeseries index (spaced every 6hrs and between the min max tumble dates of 1. - i used a timeseries index macro for this), and the aggregated events table in 1. The outer join is keyed on customer_id and tumble date, and null values of cashflow deltas are colaesced to 0.
 3. The table resulting from 2 is an aggregated timeseries of cashflow deltas per customer. To get the withdrawable account balance for each customer, performing a cum sum partitioned customer on ascending tumble dates)
 
+![](https://github.com/stevek85/ft_dbt/blob/f1c457c26357bf98d55e0c84bece554e88111ecd/Screenshot%202021-11-02%20at%2020.24.20.png)
+
 ### fx revenue cashflows
 To create an fx revenue table,  I made the assumption the ft charge 1% of buy/sell orders on US stocks. The SQL is trivial
 
